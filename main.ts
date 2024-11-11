@@ -47,9 +47,9 @@ export default class TjTuomPlugin extends Plugin {
 		const elems = element.findAll("p");
 
 		for (const elem of elems) {
-			const idx = elem.innerText.indexOf(this.settings.flashCardSeparator);
+			const idx = elem.innerHTML.indexOf(this.settings.flashCardSeparator);
 			if (idx !== -1) {
-				elem.innerText = elem.innerText.substring(
+				elem.innerHTML = elem.innerHTML.substring(
 					idx + this.settings.flashCardSeparator.length,
 				);
 				elem.querySelector("br:first-child")?.remove();
